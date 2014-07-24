@@ -1,0 +1,10 @@
+# .gitignore for 'no'
+
+# vimfiles
+*~
+*.swp
+
+# C files
+*.o
+*.stackdump
+no
