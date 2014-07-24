@@ -1,17 +1,18 @@
 # makefile for tuningFork
 
-CC=gcc
-CFLAGS=-fopenmp
-LDFLAGS=-lm
+CFLAGS  := -fopenmp
+LDFLAGS := -lm
+SOURCES := main.c
+OBJECTS :=$(SOURCES:.cpp=.o)
+EXECUTABLE := no
 
-all: no
+all: $(SOURCES) $(EXECUTABLE)
 
-no: main.o
-	$(CC) $(CFLAGS) main.o -o no $(LDFLAGS)
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
 
-main.o:
-	$(CC) $(CFLAGS) -c main.c $(LDFLAGS)
-
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $@ $(LDFLAGS)
 
 clean:
-	rm -f *.o no *.stackdump
+	rm -f *.o $(EXECUTABLE) *.stackdump
