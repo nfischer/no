@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     else
         strcpy(text, argv[1]);
 
-    n_threads = omp_get_num_procs();
+    n_threads = 64; // let's make things interesting
     omp_set_num_threads(n_threads);
 
     #pragma omp parallel
