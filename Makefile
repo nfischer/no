@@ -1,7 +1,7 @@
 # makefile for tuningFork
 
 CC=gcc
-CFLAGS=-fopenmp -Wall -O2
+CFLAGS=-fopenmp
 LDFLAGS=-lm
 
 all: no
