@@ -1,4 +1,4 @@
-# makefile for tuningFork
+# makefile for 'no'
 
 CFLAGS  := -fopenmp
 LDFLAGS := -lm
